@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+
+    title <%= @project_name_camel_case %>
+
+    link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"
+    link rel="stylesheet" href="#{static_url(@conn, "/css/app.css")}"
+
+  body.bg--near-white1
+    .dt.w-100.bg-white.bb.b--black-10
+      .ph3.tl.dtc.v-mid.w-50.blur
+        .flex.items-center <%= @project_name_camel_case %>
+      .pr3.tr.dtc.w-50
+        img.ma2.br-100.pa1.w2 alt="avatar" src="//gravatar.com/avatar/f3ecddbb2495c2bd92ca710df5f47c50?s=200"
+
+    .h-100.flex
+      .pa3.w5.bt.bw0.bg-white
+        .f6.gray.tracked.ttu.fwb Label
+        .mv3.mid-gray.list.pl0 
+          a.icon-placeholder-1.link.black.br4.pa2.flex.items-center.bg-animate.hover-bg-light-gray.active-bg-light-gray href="/"
+            .pr3
+              i data-feather="activity"
+              span Activity
+
+      main.w-100 role="main"
+          = render @view_module, @view_template, assigns
+
+  script src="https://unpkg.com/feather-icons"
+  script src="#{static_path(@conn, "/js/app.js")}"
