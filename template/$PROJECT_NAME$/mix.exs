@@ -42,8 +42,6 @@ defmodule <%= @project_name_camel_case %>.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
-      {:credo, "~> 0.7", only: [:dev, :test]},
-      {:ex_doc, "~> 0.15", only: [:dev, :test]},
       {:gettext, "~> 0.11"},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_ecto, "~> 3.2"},
